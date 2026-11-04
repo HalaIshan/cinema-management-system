@@ -372,9 +372,9 @@ public class SimpleServer extends AbstractServer {
 		CinemaBranches.add(karmielCinema);
 		CinemaBranches.add(jerusalemCinema);
 
-		HeadManager headManager = new HeadManager(324122258, "Shada Ghanem", "shadaGh0512",
-				"shada0512", "Head Manager", false, "0527990807",
-				"shada.5.12.2001@gmail.com", "",CinemaBranches);
+		HeadManager headManager = new HeadManager(100000001, "Shada Ghanem", "shadaGh0512",
+				"shada0512", "Head Manager", false, "0500000001",
+				"shada@example.com", "",CinemaBranches);
 		session.save(headManager);
 		session.flush();
 	}
