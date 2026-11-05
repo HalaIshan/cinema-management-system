@@ -23,7 +23,7 @@ Built as the final project of the **Software Engineering** course at the Univers
 2. Double-click **`run_client.bat`**. The client window opens.
 3. On the first screen keep **`localhost`** and port **`3000`**, and press **Enter**.
 
-You can open several clients at the same time to see live updates between users.
+You can open several clients at the same time to see live updates between users. To run the server and the clients on different computers, see [Connecting from other computers](#connecting-from-other-computers) below.
 
 The server uses a built-in **H2 database**, so no database installation or password is needed. The database is created and filled with sample data every time the server starts.
 
@@ -45,6 +45,49 @@ DB_PASSWORD=your_password
 ```
 
 </details>
+
+---
+
+## Connecting from Other Computers
+
+The system is built as a real client-server application: the **server runs on one computer**, and **any number of clients** can connect to it from other computers at the same time.
+
+### The first screen of the client
+
+When the client starts, it asks where the server is:
+
+| Field | What to enter |
+|---|---|
+| **Host IP** | The address of the computer that runs the server. Use `localhost` when the server runs on the same computer. |
+| **Port** | `3000` – the server always listens on this port. |
+
+Press **Enter** to connect. If the server cannot be reached, the client shows *"Failed to connect to server"*, and you can fix the address and try again.
+
+### Server and clients on the same network (Wi-Fi or LAN)
+
+This is the setup the course project was built for.
+
+1. **On the server computer:** run `run_server.bat` and wait for `Server initialized`.
+   - The first time, Windows may ask whether to allow Java through the firewall. Choose **Allow** for private networks; otherwise other computers cannot connect.
+   - Find the computer's address: open a terminal, run `ipconfig`, and copy the **IPv4 Address** (for example `192.168.1.15`).
+2. **On every client computer:** download the project, install Java, and run **only** `run_client.bat`. The first run builds the client, so it takes a few minutes.
+3. On the first screen enter the server's IPv4 address as **Host IP** and `3000` as **Port**, and press **Enter**.
+
+Every client that connects sees the changes of the others right away – for example, a seat bought on one computer is shown as taken on all the others.
+
+### Server and clients in different places
+
+When the computers are not on the same network, the clients cannot reach the server's local address directly. Two ways to connect them:
+
+- **A virtual private network tool** such as [Tailscale](https://tailscale.com) or [ZeroTier](https://www.zerotier.com): install it on the server and on every client, and use the address it gives the server computer as **Host IP**. This is the simplest way.
+- **Port forwarding:** on the router of the server's network, forward TCP port `3000` to the server computer, and use the network's public IP address as **Host IP**.
+
+### If the client cannot connect
+
+- Check that the server window is open and shows `Server initialized`.
+- Check the **Host IP** and that the **Port** is `3000`.
+- Check that the firewall on the server computer allows Java.
+- Check that both computers are on the same network, or connected through one of the ways above.
 
 ---
 
