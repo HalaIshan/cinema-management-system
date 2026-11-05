@@ -17,14 +17,61 @@ Built as the final project of the **Software Engineering** course at the Univers
 
 ## Quick Start (Windows)
 
+This is a desktop application, so it runs on your computer and not in the browser. Follow these steps to download it, run it and check that it works. It takes about 5 minutes the first time.
+
 > [!IMPORTANT]
 > **The only requirement is Java – JDK 17 or newer.**
-> Check it by opening a terminal and running `java -version`. If it is missing, install it from [adoptium.net](https://adoptium.net) (Temurin 17).
-> You do **not** need to install Maven: the project includes the Maven Wrapper (`mvnw`), which downloads Maven and all the libraries automatically on the first run. This needs an internet connection and can take a few minutes; later runs start much faster.
+> You do **not** need to install Maven, a database or an IDE. The project includes the Maven Wrapper (`mvnw`), which downloads Maven and all the libraries automatically on the first run. This needs an internet connection.
 
-1. Double-click **`run_server.bat`**. It builds the project and starts the server. Wait until you see **`Server initialized`**, and keep this window open.
-2. Double-click **`run_client.bat`**. The client window opens.
-3. On the first screen keep **`localhost`** and port **`3000`**, and press **Enter**.
+### Step 1 – Check that Java is installed
+
+1. Press **Win + R**, type `cmd` and press **Enter**.
+2. In the black window, type `java -version` and press **Enter**.
+3. If you see a version number of **17 or higher** (for example `java version "21.0.3"`), Java is ready.
+   If you see *"'java' is not recognized"*, download and install **Temurin 17** from [adoptium.net](https://adoptium.net), then close the window and check again.
+
+### Step 2 – Download the project
+
+**Option A – without Git (easiest):**
+1. At the top of this page, click the green **`<> Code`** button and choose **Download ZIP**.
+2. Open your **Downloads** folder, right-click `cinema-management-system-main.zip` and choose **Extract All…**, then **Extract**.
+3. Open the extracted folder. You should see `run_server.bat` and `run_client.bat` in it.
+
+**Option B – with Git:**
+```bash
+git clone https://github.com/HalaIshan/cinema-management-system.git
+```
+
+### Step 3 – Start the server
+
+1. Double-click **`run_server.bat`**. A black window opens.
+   - If Windows shows *"Windows protected your PC"*, click **More info** and then **Run anyway**.
+2. Wait. The first run downloads Maven and the libraries and builds the project, so it can take a few minutes. Later runs start in seconds.
+3. The server is ready when the last line is **`Server initialized`**.
+4. **Keep this window open** for as long as you use the system. Closing it stops the server.
+
+### Step 4 – Start the client
+
+1. Double-click **`run_client.bat`**. After a few seconds the application window opens.
+2. On the first screen keep **`localhost`** as the Host IP and **`3000`** as the Port, and press **Enter**.
+3. The main screen of the cinema opens. ✅ The system is working.
+
+### Step 5 – Try it
+
+- **As a customer:** open **Movies**, choose a movie and a screening, pick seats on the hall map and pay. No login is needed.
+- **As an employee:** open the employee login and enter `hala123` / `hala123` (branch manager) or any other user from [Demo Accounts](#demo-accounts).
+- For a full tour of the features, see [How to Test the System](#how-to-test-the-system).
+
+To stop the system, close the client window and then the server window.
+
+### Troubleshooting
+
+| Problem | Solution |
+|---|---|
+| *"Java was not found"* | Install Java (step 1), close the window and run the file again. |
+| *"Build failed"* in the server window | Check your internet connection and run `run_server.bat` again. |
+| *"Failed to connect to server"* in the client | Make sure the server window is open and shows `Server initialized`, and that the port is `3000`. |
+| The server window closes or shows an error about port 3000 | Another server is already running. Close all the old server windows and try again. |
 
 You can open several clients at the same time to see live updates between users. To run the server and the clients on different computers, see [Connecting from other computers](#connecting-from-other-computers) below.
 
