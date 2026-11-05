@@ -6,9 +6,12 @@ Built as the final project of the **Software Engineering** course at the Univers
 
 **Tech stack:** Java 17 · JavaFX · OCSF (client-server over TCP sockets) · Hibernate ORM · H2 / MySQL · Maven · EventBus
 
-📄 **Project documents (in Hebrew):**
-- [`docs/project_requirements_spring2024.pdf`](docs/project_requirements_spring2024.pdf) – the system description we received from the course
-- [`docs/system_test_scenarios_spring2024.pdf`](docs/system_test_scenarios_spring2024.pdf) – the scenarios the system was tested against
+📄 **Project documents** – the original documents we received from the course (in Hebrew), and an English translation of each:
+
+| Document | Original (Hebrew) | English translation |
+|---|---|---|
+| System description – the project requirements | [PDF](docs/project_requirements_spring2024.pdf) | [Read in English](docs/project_requirements_spring2024_EN.md) |
+| System test outline – the scenarios the system was tested against | [PDF](docs/system_test_scenarios_spring2024.pdf) | [Read in English](docs/system_test_scenarios_spring2024_EN.md) |
 
 ---
 
@@ -143,7 +146,7 @@ A short tour of the main features. Open **two clients** side by side to also see
 
 ## What Was Required and How We Built It
 
-Each section below follows the course's test scenarios. **Required** is taken from the project description we received, and **How we built it** describes what the system actually does.
+Each section below follows the course's [test outline](docs/system_test_scenarios_spring2024_EN.md). **Required** is taken from the [project description](docs/project_requirements_spring2024_EN.md) we received, and **How we built it** describes what the system actually does.
 
 ### 1. Logging in
 
@@ -156,7 +159,7 @@ Each section below follows the course's test scenarios. **Required** is taken fr
 
 ### 2. Browsing movies
 
-**Required:** a list of the movies now showing, with their screening times; movies coming soon; and movies for home viewing. Each movie shows its name in Hebrew and English, the main actors, a summary and a picture. The list can be paged and searched by cinema, date and genre.
+**Required:** a list of the movies now showing, with their screening times; movies coming soon; and movies for home viewing. Each movie shows its name in Hebrew and English, the producer, the main actors, a summary and a picture. The list can be paged and searched by cinema, date and genre.
 
 **How we built it:**
 - Three pages: **Movies** (now showing), **Coming Soon** and **Home Viewing**, each with movie posters and paging.
