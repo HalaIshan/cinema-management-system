@@ -30,6 +30,34 @@ This is a desktop application, so it runs on your computer and not in the browse
 3. If you see a version number of **17 or higher** (for example `java version "21.0.3"`), Java is ready.
    If you see *"'java' is not recognized"*, download and install **Temurin 17** from [adoptium.net](https://adoptium.net), then close the window and check again.
 
+### Fastest way – copy and paste (Windows PowerShell)
+
+Instead of steps 2–4, you can download and start everything with a few commands:
+
+1. Press **Win + R**, type `powershell` and press **Enter**.
+2. Copy all of these lines, paste them into the blue window and press **Enter**:
+
+```powershell
+cd ([Environment]::GetFolderPath('Desktop'))
+Invoke-WebRequest https://github.com/HalaIshan/cinema-management-system/archive/refs/heads/main.zip -OutFile cinema.zip
+Expand-Archive cinema.zip -DestinationPath . -Force
+Remove-Item cinema.zip
+cd cinema-management-system-main
+Start-Process run_server.bat
+```
+
+This downloads the project to a folder on your Desktop called `cinema-management-system-main`, and opens the server window.
+3. Wait until the server window shows **`Server initialized`** (a few minutes the first time).
+4. Go back to the PowerShell window, paste this line and press **Enter** to open the client:
+
+```powershell
+Start-Process run_client.bat
+```
+
+5. Continue from [step 4](#step-4--start-the-client), point 2.
+
+Next time, just double-click `run_server.bat` and then `run_client.bat` in that folder.
+
 ### Step 2 – Download the project
 
 **Option A – without Git (easiest):**
